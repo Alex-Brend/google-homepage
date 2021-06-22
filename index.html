@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- WEBPAGE HEAD -->
+<head>
+    <meta charset="UTF=8">
+    <meta name="description" content="The Odin Project (TOP) - Google Homepage">
+    <meta name="keywords" content="The Odin project, Google Homepage">
+    <meta name="author" content="Alex-Brend">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> The Odin Project - Google Homepage </title>
+
+    <!-- Search Engine Optimization -->
+    <meta property="og:title" content="Google Homepage Project - The Odin Project"/>
+    <meta property="og:img" content="https://en.wikipedia.org/wiki/Trollface#/media/File:Trollface#_non_free.png"/>
+    <meta property="og:description" content="Google Homepage Project"/>
+    <meta property="og:link" content="https://github.com/Alex-Brend/google-homepage"/>
+    <meta property="og:link" content="website"/>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+
+
+    <!-- CSS Reference-->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<!-- WEBPAGE BODY -->
+<body>
+    <header>
+        <!-- NAVBAR-->
+        <div class="nav-flex-container">
+            <div class="nav-flex-child-1">
+                <ul class="nav-bar-left">
+                    <li> <a ref=""> About</a> </li>
+                    <li> <a ref=""> Store</a> </li>
+                </ul>
+            </div>
+            <div class="nav-flex-child-2">
+                <ul class="nav-bar-right">
+                    <li> <a ref=""> Gmail</a> </li>
+                    <li> <a ref=""> Images</a> </li>
+                    <li> <a ref=""> <img class="square-icon" src=" " alt="3x3 square icon"></a></li>
+                </ul>
+            </div>
+            <div class="nav-flex-sign-in">
+                <div id="my-signin2"></div>
+                <script>
+                function onSuccess(googleUser) {
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                }
+                function onFailure(error) {
+                    console.log(error);
+                }
+                function renderButton() {
+                    gapi.signin2.render('my-signin2', {
+                    'scope': 'profile email',
+                    'width': 240,
+                    'height': 50,
+                    'longtitle': true,
+                    'theme': 'dark',
+                    'onsuccess': onSuccess,
+                    'onfailure': onFailure
+                    });
+                }
+                </script>
+            </div>
+
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        </div>
+</header>
+
+<!-- GOOGLE LOGO AND SEARCH FUNCTION -->
+    <main>
+        <div class="grid-box-container">
+
+            <!-- FIRST ROW -->
+            <div class="grid-row-1">
+                <img class="google-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google logo">
+            </div>
+
+            <!-- SECOND ROW-->
+            <div class="grid-row-2-icon">
+                <img class="search-icon" src="https://i.imgur.com/b1X2xZT.png">
+            </div> 
+
+            <div class="grid-row-2">
+                <input class="search-bar" id="search-bar" type="text" autofocus></input> <!--autofocus starts the cursor on the search bar -->
+
+            </div>
+
+            <!-- THIRD ROW-->
+            <div class="grid-row-3-button-1">
+                <button class="first-button" type="submit">Google Search</button>
+            </div>
+
+            <div class="grid-row-3-button-2">
+                <button class="second-button" type="submit">I'm Feeling Lucky</button>
+            </div>
+        </div>
+    </main>
+
+
+
+
+</body>
+
+<!-- WEBPAGE FOOTER -->
+<footer>
+</footer>
+
+</html>
